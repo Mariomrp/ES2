@@ -1,8 +1,11 @@
+
+import Dias_Prederigo.IBinomioEntidade;
+
 /**
  *
  * @author 631220116
  */
-public class BinomioEntidadeFake {
+public class BinomioEntidadeFake implements IBinomioEntidade {
     private int n;
     private int k;
     private int c;
@@ -24,4 +27,5 @@ public class BinomioEntidadeFake {
     public int getCoeficiente(int n, int k) {
         return 0;
     }
+
 }

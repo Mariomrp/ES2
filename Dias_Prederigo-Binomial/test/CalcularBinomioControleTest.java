@@ -1,9 +1,5 @@
 import Dias_Prederigo.CalcularBinomioControle;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import Dias_Prederigo.IBinomioEntidade;
 import static org.junit.Assert.*;
 
 /**
@@ -12,27 +8,26 @@ import static org.junit.Assert.*;
  */
 public class CalcularBinomioControleTest {
     
-    public CalcularBinomioControleTest() {
+    private void Testar(int n, int k, int coef) {
+        IBinomioEntidade e = new IBinomioEntidadeFake(n, k, coef);
         CalcularBinomioControle c = new CalcularBinomioControle();
-        int atual = c.calcular(6,2);
-        int esperado = 15;
+        int atual = c.calcular(n,k);
+        int esperado = coef;
         assertEquals(esperado, atual);
     }
-    
-    @BeforeClass
-    public static void setUpClass() {
+   public void testSeisDois() {
+        testar(6,2,15);
     }
     
-    @AfterClass
-    public static void tearDownClass() {
+    public void testUmUm() {
+        testar(1,1,2);
     }
     
-    @Before
-    public void setUp() {
+    public void testDoisUm() {
+        testar(2,1,2);
     }
     
-    @After
-    public void tearDown() {
+    public void testDoisDois() {
+        testar(2,2,1);
     }
-
 }

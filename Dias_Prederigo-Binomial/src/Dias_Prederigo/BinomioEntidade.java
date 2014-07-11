@@ -4,16 +4,25 @@ package Dias_Prederigo;
  *
  * @author 631220116
  */
-public class BinomioEntidade {
+public class BinomioEntidade implements IBinomioEntidade {
+  
+    private int n;
+    private int k;
+    
+    @Override
     public void setN(int n) {
-
+        this.n = n;
     }
 
+    @Override
     public void setK(int k) {
-        
+        this.k = k;
     }
 
-    public int getCoeficiente(int n, int k) {
-        return 0;
+    @Override
+    public int getCoeficiente() {
+        int r;
+        r = n + k;
+        return r;
     }
 }

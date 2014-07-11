@@ -1,40 +1,37 @@
 import Dias_Prederigo.BinomioEntidade;
-import org.junit.After;
-import org.junit.AfterClass;
+import Dias_Prederigo.IBinomioEntidade;
 import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 /**
  *
  * @author 631220116
  */
 public class BinomioEntidadeTest {
+    private int n;
+    private int c;
     
-    public BinomioEntidadeTest() {
-        BinomioEntidade e = new BinomioEntidade();
-        e.setN(6);
-        e.setK(2);
-        int atual = e.getCoeficiente(6,2);
-        int esperado = 15;
+    public BinomioEntidadeTest(int n, int k, int c) {
+        IBinomioEntidade e = new BinomioEntidade();
+        e.setN(n);
+        e.setK(k);
+        int atual = e.getCoeficiente();
+        int esperado = c;
         assertEquals(esperado, atual);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+   public void testSeisDois() {
+        testar(6,2,15);
     }
     
-    @AfterClass
-    public static void tearDownClass() {
+    public void testUmUm() {
+        testar(1,1,2);
     }
     
-    @Before
-    public void setUp() {
+    public void testDoisUm() {
+        testar(2,1,2);
     }
     
-    @After
-    public void tearDown() {
+    public void testDoisDois() {
+        testar(2,2,1);
     }
-
 }
